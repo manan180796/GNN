@@ -68,4 +68,4 @@ gcn = model.GCN(n=karate_x.shape[0], embed=5)
 gcn.compile(optimizer=tf.optimizers.Adam(learning_rate=0.001),
             loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
 gcn.fit(x=[karate_graph, karate_x], y=karate_y,
-        batch_size=karate_graph.shape[0], sample_weight=mask,epochs=200)
+        batch_size=karate_graph.shape[0], sample_weight=mask,epochs=200,shuffle=False)
